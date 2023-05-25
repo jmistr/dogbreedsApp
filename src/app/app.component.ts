@@ -13,6 +13,10 @@ export class AppComponent implements OnInit {
   public dogsBreed;
 
   ngOnInit(): void {
+    this.getAllBreeds();
+  }
+
+  getAllBreeds() {
     this.doggyService.getAllBreeds().subscribe((response) => {
       if (response.status === 'success') {
         this.dogsBreed = Object.keys(response.message);
@@ -25,7 +29,6 @@ export class AppComponent implements OnInit {
     });
   }
 
-  
   onOptionsSelected(selectedValue) {
     this.doggyService.searchByBreed(selectedValue).subscribe((res) => {
       const img = document.querySelector('.dog-img');
