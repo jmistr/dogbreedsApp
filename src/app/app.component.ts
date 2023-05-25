@@ -25,6 +25,7 @@ export class AppComponent implements OnInit {
     });
   }
 
+  
   onOptionsSelected(selectedValue) {
     this.doggyService.searchByBreed(selectedValue).subscribe((res) => {
       const img = document.querySelector('.dog-img');
