@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Dogs API</title>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <header>
+          <h1>Dog Breeds App</h1>
+        </header>
+      </div>
+      <div>
+        <label class="dropdownlable">List All Breeds</label>
+        <select
+          style="margin:10px"
+          (change)="onOptionsSelected(selectedValue)"
+          [(ngModel)]="selectedValue"
+        >
+          <option [value]="">--Selected--</option>
+          <option *ngFor="let dog of dogsBreed; let i = index" [value]="dog">
+            {{ dog | uppercase }}
+          </option>
+        </select>
+      </div>
+
+      <div class="img-container" style=" margin-left: 20px">
+        <div class="container">
+          <p class="spinner">🐶</p>
+          <img src="http://placecorgi.com/260/180" class="dog-img show" />
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
