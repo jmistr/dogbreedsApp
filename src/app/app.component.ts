@@ -10,7 +10,7 @@ export class AppComponent implements OnInit {
   constructor(private doggyService: DogService) {}
 
   selectedValue: string;
-  public dogsBreed;
+  private dogsBreed;
 
   ngOnInit(): void {
     this.getAllBreeds();
